@@ -25,7 +25,7 @@ def label = "build"
           stage ('Helm Chart') {
             container('build') {
                 withCredentials([usernamePassword(credentialsId: 'jfrog', usernameVariable: 'username', passwordVariable: 'password')]) {
-                      sh '/usr/local/bin/helm repo add eos-helm-local  https://etccompany.jfrog.io/artifactory/etccompany-helm-local --username $username --password $password'
+                      sh '/usr/local/bin/helm repo add etccompany-helm-local  https://etccompany.jfrog.io/artifactory/etccompany-helm-local --username $username --password $password'
                       sh "/usr/local/bin/helm repo update"
                       sh "/usr/local/bin/helm upgrade  --install --force micro-services-admin  --namespace ${env} -f values.yaml etccompany-helm-local/micro-services-admin"
                       sh "/usr/local/bin/helm list -a --namespace ${env}"
