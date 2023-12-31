@@ -1,0 +1,12 @@
+deployment:
+  replicaCount: 1
+  image: docker.io/prakrit55/etccompany-micro-services-admin
+resources:
+  limits:
+    cpu: 250m
+    memory: 500Mi
+  requests:
+    cpu: 100m
+    memory: 64Mi
+ingress: 
+  host: a01d85acf1036436f86e6077da69506c-302ba8383520ae47.elb.us-east-1.amazonaws.com
