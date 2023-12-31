@@ -1,5 +1,5 @@
 def label = "build"
-  def env = "dev"
+  def env = "perf"
   podTemplate(label: label, yaml: """
   apiVersion: v1
   kind: Pod
